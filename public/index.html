@@ -30,18 +30,18 @@
         const messageDiv = document.getElementById('message');
 
         // Submit email and get OTP
-        emailForm.addEventListener('submit', async (e) => { //e = event, async ek promise return karta hai
+        emailForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value;
 
-            const response = await fetch('/send-otp', { //nodemailer
+            const response = await fetch('/send-otp', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ email })
             });
 
             const data = await response.json();
-            messageDiv.textContent = data.message; //OTP sent to your email.
+            messageDiv.textContent = data.message; // "OTP sent to your email."
 
             if (data.success) {
                 emailForm.style.display = 'none';
@@ -54,17 +54,19 @@
             e.preventDefault();
             const otp = document.getElementById('otp').value;
 
-            const response = await fetch('/verify-otp', { //nodemailer
+            const response = await fetch('/verify-otp', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ otp }) //1010101000
+                body: JSON.stringify({ otp })
             });
 
             const data = await response.json();
-            messageDiv.textContent = data.message; //OTP verified successfully!
+            messageDiv.textContent = data.message; // "OTP verified successfully!"
 
             if (data.success) {
                 otpForm.style.display = 'none';
+                // Redirect to index.html
+                window.location.href = 'index.html'; //navigate to next page
             }
         });
     </script>
