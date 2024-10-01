@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter OTP</h2>
+        <form id="otpForm">
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById("otpForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const email = localStorage.getItem('email'); // Ensure the email is stored in localStorage before redirecting
+            const otp = document.getElementById("otp").value;
+
+            fetch('/verify-otp', { // Correct endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, otp })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.message === 'OTP verified successfully!') { // Check for success message
+                    alert('OTP verified successfully!');
+                    // Redirect to home page or other actions
+                    window.location.href = '/home'; // Redirect to the home page
+                } else {
+                    document.getElementById("message").textContent = data.message; // Display error message
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById("message").textContent = 'An error occurred. Please try again.'; // Generic error message
+            });
+        });
+    </script>
+</body>
+</html>
