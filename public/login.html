@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-    </style>
 </head>
 <body>
     <div class="container">
@@ -21,6 +19,9 @@
             <button type="submit">Login</button>
         </form>
         <p id="message"></p>
+
+        <!-- Add "Not a user? Register" link -->
+        <p>Not a user? <a href="register.html">Register</a></p>
     </div>
 
     <script>
@@ -41,11 +42,14 @@
 
                 const data = await response.json();
 
-                if (response.ok) {  // Check if response is successful
-                    alert('OTP sent to your email.');  // Show success message
-                    window.location.href = 'otp.html';  // Redirect to otp.html
+                if (response.ok) {
+                    alert('OTP sent to your email.');
+                    window.location.href = 'otp.html';  // Redirect to otp.html if login successful
+                } else if (data.message === 'User not found') {
+                    alert('User not found, redirecting to registration page.');
+                    window.location.href = 'register.html';  // Redirect to register.html if user is not found
                 } else {
-                    document.getElementById("message").textContent = data.message; // Show error message
+                    document.getElementById("message").textContent = data.message;  // Show error message
                 }
             } catch (error) {
                 console.error('Error during login:', error);

@@ -46,7 +46,13 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    if (!user || !(await bcrypt.compare(password, user.password))) {
+
+    if (!user) {
+        // If user is not found, send a "User not found" message
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (!(await bcrypt.compare(password, user.password))) {
         return res.status(401).send({ message: 'Invalid email or password' });
     }
 
@@ -62,8 +68,9 @@ app.post('/login', async (req, res) => {
         text: `Your OTP code is: ${otp}`
     });
 
-    res.send({ message: 'OTP sent to your email!' });
+    res.send({ success: true, message: 'OTP sent to your email!' });
 });
+
 
 // Endpoint to verify OTP
 app.post('/verify-otp', (req, res) => {
