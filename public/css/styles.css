@@ -7,7 +7,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: url('../images/bg_image.jpg') no-repeat center center fixed;
+    background-size: cover; /* Make sure the image covers the whole page */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +16,7 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -38,7 +39,8 @@ form {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -50,7 +52,8 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="number"]:focus {
     border-color: #007bff;
 }
 
@@ -83,6 +86,7 @@ p {
     input[type="text"],
     input[type="email"],
     input[type="password"],
+    input[type="number"],
     button {
         padding: 12px;
     }
