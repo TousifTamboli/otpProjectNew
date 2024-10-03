@@ -6,11 +6,12 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const bcrypt = require('bcrypt'); // For password hashing
 const { User } = require('./models/User');  // MongoDB User model
+const crypto = require('crypto'); // For generating token
 
-// In-memory OTP storage for simplicity
-let otpStore = {};
+// In-memory token storage for simplicity
+let resetTokenStore = {};
 
-// Create an express app
+// Create an express app (make sure to initialize `app` before using routes)
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -28,6 +29,56 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     }
 });
+
+// Reset password routes
+app.post('/forgot-password', async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+        return res.status(404).send({ message: 'User not found' });
+    }
+
+    // Generate a unique token
+    const token = crypto.randomBytes(32).toString('hex');
+    const resetLink = `http://localhost:3000/reset-password.html?token=${token}&email=${email}`;
+
+    // Store the token temporarily
+    resetTokenStore[email] = token;
+
+    // Send the reset link via email
+    await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: 'Password Reset',
+        text: `Please click the following link to reset your password: ${resetLink}`
+    });
+
+    res.send({ message: 'Password reset link sent to your email.' });
+});
+
+app.post('/reset-password', async (req, res) => {
+    const { email, token, newPassword } = req.body;
+
+    // Check if the token matches
+    if (resetTokenStore[email] !== token) {
+        return res.status(400).send({ message: 'Invalid or expired token' });
+    }
+
+    // Hash the new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update the user's password
+    await User.updateOne({ email }, { $set: { password: hashedPassword } });
+
+    // Remove the token after use
+    delete resetTokenStore[email];
+
+    res.send({ message: 'Password reset successfully' });
+});
+
+// In-memory OTP storage for simplicity
+let otpStore = {};
 
 // User Registration
 app.post('/register', async (req, res) => {
@@ -48,7 +99,6 @@ app.post('/login', async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-        // If user is not found, send a "User not found" message
         return res.status(404).json({ message: 'User not found' });
     }
 
@@ -71,11 +121,9 @@ app.post('/login', async (req, res) => {
     res.send({ success: true, message: 'OTP sent to your email!' });
 });
 
-
 // Endpoint to verify OTP
 app.post('/verify-otp', (req, res) => {
     try {
-        console.log('Request body:', req.body); // Log incoming request
         const otp = req.body.otp;
         const email = Object.keys(otpStore).find(key => otpStore[key].toString() === otp.toString());
 

@@ -19,9 +19,8 @@
             <button type="submit">Login</button>
         </form>
         <p id="message"></p>
-
-        <!-- Add "Not a user? Register" link -->
-        <p>Not a user? <a href="register.html">Register</a></p>
+        <p><a href="forgot-password.html">Forgot Password?</a></p> <!-- Forgot Password Link -->
+        <p><a href="register.html">Do not have account?</a></p> <!-- Forgot Password Link -->
     </div>
 
     <script>
@@ -44,12 +43,9 @@
 
                 if (response.ok) {
                     alert('OTP sent to your email.');
-                    window.location.href = 'otp.html';  // Redirect to otp.html if login successful
-                } else if (data.message === 'User not found') {
-                    alert('User not found, redirecting to registration page.');
-                    window.location.href = 'register.html';  // Redirect to register.html if user is not found
+                    window.location.href = 'otp.html';
                 } else {
-                    document.getElementById("message").textContent = data.message;  // Show error message
+                    document.getElementById("message").textContent = data.message;
                 }
             } catch (error) {
                 console.error('Error during login:', error);
