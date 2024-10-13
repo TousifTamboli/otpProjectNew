@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Classes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  
+    background-image: url('bgall.jpeg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-repeat: no-repeat; /* No repeating of the image */
+    background-position: center; /* Center the image */
+}
+
+header {
+   
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.course-section {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.course-section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+
+
+.topics {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.topics li {
+    background: #eee;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+}
+.card-container
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+.card
+{
+    width: 325px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow:0px 2px 4px rgba(0,0,0,0.3) ; 
+    overflow: hidden;
+    transition:transform 0.6s ease;
+}
+.card:hover
+{
+    transform: translateY(-20px);
+}
+.card img
+{
+    width: 100%;
+    height:300px ;
+    object-fit: cover;
+}
+.card-content
+{
+    padding: 20px;
+
+}
+.card-content h1
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card-content p
+{
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.mission-1
+{
+    margin: 3px;
+    padding: 5px;
+}
+.mission-1 h1{
+    text-align: center;
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+.mission-1 p{
+    text-align: center;
+    padding: 3px;
+    color: #030303;
+}
+.button {
+            background-color: #5d64b4;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #2b538c;
+            transform: translateY(-2px);
+        }
+        .button:active {
+            background-color: #6097e4;
+            transform: translateY(0);
+        }
+        .container h2
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #080808;
+    cursor: pointer;
+}
+</style>
+<body>
+    <header>
+        <h1>Trading Classes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">STOCK</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intermediate" class="course-section">
+        <h2>Intermediate Level</h2>
+        <!-- Similar structure for intermediate videos -->
+        <ul class="topics">
+            <li><a href="m1.html">Advanced Technical Analysis</a></li>
+            <li><a href="m2.html">Advanced Trading Strategies</a></li>
+            <li><a href="m3.html">Advanced Risk Management and Position Sizing</a></li>
+            <li><a href="m4.html">Advanced Chart Patterns and Price Action</a></li>
+            <li><a href="m5.html">Advanced Fundamental Analysis</a></li>
+            <li><a href="m6.html">Advanced Psychological Aspects of Trading</a></li>
+            <li><a href="m7.html">Advanced Algorithmic and Automated Trading</a></li>
+            <li><a href="m8.html">Advanced Trading Plan Refinement</a></li>
+            <li><a href="m9.html">Advanced Understanding Market Microstructure</a></li>
+        </ul>
+    </section>
+    <div class="card-container">
+        <div class="card">
+            <img src="1.avif">
+            <div class="card-content">
+                <h1>Advanced Technical Analysis</h1>
+                <p>
+                    Price: ₹5,000<br>
+                    Duration: 4 weeks
+                    </p>
+                    <button class="button"><a href="m1.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="2.jpg">
+            <div class="card-content">
+                <h1>Trading Strategies</h1>
+                <p> Price: ₹10,000<br>
+                    Duration: 6 weeks
+                </p>
+                <button class="button"><a href="m2.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="3.jpg=ws1280x960">
+            <div class="card-content">
+                <h1>Risk Management and Position Sizing</h1>
+                <p>
+                    Price: ₹8,000<br>
+                    Duration: 5 weeks
+                </p>
+                <button class="button"><a href="m3.html">Click Me</a></button> 
+            </div>
+        </div>
+     
+        
+        <div class="card">
+            <img src="4.avif">
+            <div class="card-content">
+                <h1> Chart Patterns and Price Action</h1>
+                <p> 
+                    Price: ₹6,000<br>
+                    Duration: 4 weeks
+                </p>
+                <button class="button"><a href="m4.html">Click Me</a></button>   
+            </div>
+        </div>
+        <div class="card">
+            <img src="5.jpeg">
+            <div class="card-content">
+                <h1>Fundamental Analysis</h1>
+                <p> 
+                    Price: ₹7,500<br>
+Duration: 5 weeks
+                </p>
+                <button class="button"><a href="m5.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="6.jpeg">
+            <div class="card-content">
+                <h1>Psychological Aspects of Trading</h1>
+                <p> 
+                    Price: ₹9,000<br>
+Duration: 6 weeks
+                </p>
+                <button class="button"><a href="m6.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="7.jpeg">
+            <div class="card-content">
+                <h1>Algorithmic and Automated Trading</h1>
+                <p> Price: ₹15,000<br>
+                    Duration: 8 weeks
+                </p>
+                <button class="button"><a href="m7.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="8.jpeg">
+            <div class="card-content">
+                <h1>Trading Plan Refinement</h1>
+                <p> 
+                    Price: ₹7,000<br>
+Duration: 5 weeks
+                </p>
+               
+                <button class="button"><a href="m8.html">Click Me</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="7.jpeg">
+            <div class="card-content">
+                <h1>Understanding Market Microstructure</h1>
+                <p> Price: ₹15,000<br>
+                    Duration: 8 weeks
+                </p>
+                <button class="button"><a href="m9.html">Click Me</a></button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

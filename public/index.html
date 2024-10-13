@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traders Website</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style type="text/css">
+*
+{
+    margin:0;
+    padding:0;
+    color: #fff;
+    box-sizing: border-box;
+}
+.container-fluid
+{
+   width: 100%;
+   height: 100%; 
+   background:linear-gradient(to Left,rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%),url(bg1.gif);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+.container
+{
+    width: 1200px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+    align-items:center ;
+    padding: 0px 25px;
+    
+    
+}
+.container h2
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.container ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+     
+}
+a
+{
+    text-decoration: none;
+    margin-right: 50px;
+}
+.container ul :hover
+{
+    color: #30d300;   
+}
+
+
+.content
+{
+    width: 1200px;
+    height: 100vh;
+    margin: auto;
+}
+.content h1
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 50px;
+    padding-top: 100px;
+}
+.content p
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:  rgb(218, 205, 205);
+    line-height: 30px;
+    padding-top: 30px;
+}
+
+.container1
+{
+    max-width: 1700px;
+    margin: auto;
+}
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer
+{
+background-color: #24262b;
+padding: 70px 0;
+}
+.footer-col{
+width: 25%;
+padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom:35px ;
+font-weight: 500;
+position: relative;
+
+}
+.footer-col h4::before
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover
+{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a
+{
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgba(255,255,255,0.2);
+margin: 0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: #ffffff;
+transition: all 0.5s  ease;
+}
+.footer-col .social-links a:hover
+{
+color: #24262b;
+background-color: #5ac361;
+
+}
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:574px){
+    .footer-col{
+        width: 100%;
+        
+    }
+}
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h2>Traders Playbook</h2>
+            
+            <ul>
+                <div id="navbar">
+                <a href="s1.html" target="_blank">Reg.</a>
+                <a href="courses.html" target="_blank">Courses</a>
+                <a href="learning.html" target="_blank">Learning Resources</a>
+                
+                <a href="faq.html" target="_blank">Contact us</a>
+                <a href="http://localhost:8501/" target="_blank">Stocks</a>
+                <a href="#" target="_blank">Login</a>
+                </div>
+            </ul>
+            
+        </div>
+        <div class="content">
+            <h1>Start Trading Today </h1>
+            <p>Join our platform and begin your trading <br> journey with ease.</p>
+            
+            
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+    <footer class="footer">
+        <div class="container1">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="mission.html" target="_blank">Mission</a></li>
+                        <li><a href="team.html" target="_blank">Team</a></li>
+                        <li><a href="success_stories.html" target="_blank">Success Stories</a></li>
+                        <li><a href="event.html" target="_blank">Events</a></li>
+                        <li><a href="testomonial.html" target="_blank">Testimonial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses.html"target="_blank">Basic Stock Market Course</a></li>
+                        <li><a href="courses.html"target="_blank">Advanced Technical Analysis Course</a></li>
+                        <li><a href="courses.html"target="_blank">Swing Trading Masterclass</a></li>
+                        <li><a href="courses.html"target="_blank">Algorithmic Trading Course </a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 >Contact Us</h4>
+                    <ul>
+                        <li><a href="faq.html"target="_blank">Shop no 1 </a></li>
+                        <li><a href="faq.html"target="_blank">Patil heritage</a></li>
+                        <li><a href="faq.html"target="_blank">Datta Chowk</a></li>
+                        <li><a href="faq.html"target="_blank">Karad</a></li>
+                        <li><a href="faq.html"target="_blank">8698690789</a></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Join us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        
+    </footer>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

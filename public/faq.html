@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+</head>
+
+<style type="text/css">
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins',sans-serif;
+
+
+}
+body
+{
+    background-image: url('bgall.jpeg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-repeat: no-repeat; /* No repeating of the image */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+.container
+{
+    margin: 0 40px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container h1
+{
+    color: #f4f1f1;
+}
+.container .tab
+{
+    position: relative;
+    background: #fff;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    overflow: hidden;   
+}
+.container .tab input
+{
+    appearance: none;
+}
+.container .tab label
+{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.container .tab label ::after
+{
+content: '+';
+position: absolute;
+right: 20px;
+font-size: 2em;
+color: rgba(0,0,0,0.1);
+transition: transform 1s;
+} 
+.container .tab :hover label::after
+{
+    color: #333;
+}
+.container .tab input:checked ~ label::after
+{
+    transform:rotate(135deg) ;
+    color: #fff;
+}
+.container .tab label h2
+{
+    width: 40px;
+    height: 40px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.container .tab input:checked ~ label h2
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+color: rgba(255,255,255,0.2);
+font-size: 8em;
+justify-content: flex-end;
+padding: 20px;
+}
+.container .tab:nth-child(2) label h2
+{
+   background: linear-gradient(135deg,#70f570,#49c628); 
+}
+.container .tab:nth-child(3) label h2
+{
+   background: linear-gradient(135deg,#3c8ce7,#00eaff); 
+}
+.container .tab:nth-child(4) label h2
+{
+   background: linear-gradient(135deg,#ff96f9,#c32bac); 
+}
+.container .tab:nth-child(5) label h2
+{
+   background: linear-gradient(135deg,#fd6e6a,#ffc600); 
+}
+.container .tab label h3
+{
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+}
+.container .tab input:checked ~ label h3
+{
+    background: #fff;
+    padding: 2px 10px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.container .tab .content
+{
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+.container .tab input:checked ~ .content
+{
+    max-height: 100vh;
+}
+.container .tab .content p
+{
+    position: relative;
+    padding: 10px 0;
+    z-index: 10;
+    color: #333;
+}
+.container .tab input:checked ~ .content p
+{
+    color: #fff;
+}
+
+.form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .styled-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.styled-button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Frequently asked questios?</h1>
+        <div class="tab">
+            <input type="radio" name="acc" id="acc1">
+            <label for="acc1">
+                <h2>01</h2>
+                <h3>What topics are covered in the trading classes?</h3>
+            </label>
+            <div class="content"><p> The trading classes cover various topics including technical analysis, fundamental analysis, risk management, trading psychology, and the use of trading platforms.</p></div>
+        </div>
+        <div class="tab">
+            <input type="radio" name="acc" id="acc2">
+            <label for="acc2">
+                <h2>02</h2>
+                <h3>Who can attend these trading classes?</h3>
+            </label>
+            <div class="content"><p>The classes are open to beginners as well as experienced traders looking to refine their skills.p></div>
+        </div>
+        <div class="tab">
+            <input type="radio" name="acc" id="acc3">
+            <label for="acc3">
+                <h2>03</h2>
+                <h3>How can I register for the classes?</h3>
+            </label>
+            <div class="content"><p>You can register for the classes through our website by filling out the registration form and making the necessary payment.p></div>
+        </div>
+        <div class="tab">
+            <input type="radio" name="acc" id="acc4">
+            <label for="acc4">
+                <h2>04</h2>
+                <h3>Will I receive any course materials?</h3>
+            </label>
+            <div class="content"><p>Yes, participants will receive course materials including slides, notes, and recommended readings.</p></div>
+        </div>
+    </div>
+    
+
+
+        <div class="form-container">
+            <form action="POST" name="google-sheet">
+                <h2>Get in touch</h2>
+                <div class="input-group">
+                    <label for="name">Name</label> 
+            <input type="text" id="fname" name="Name" placeholder="Your name.." id="name" name="name" pattern="[A-Za-z\s]+" required title="Name should contain only letters.">
+            
+                <div class="error" id="nameError"></div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="lname" name="Email" placeholder="Your Email..">
+                    
+                 
+                
+                </div>
+
+
+
+
+                
+
+
+                
+
+
+                <div class="input-group">
+                    <label for="mobile">Mobile</label> 
+                    <input type="text" id="lname" name="Mobile" placeholder="Your Mobile Number.."pattern="\d{10}" required title="Mobile number must be exactly 10 digits." > 
+                 
+                <div class="error" id="mobileError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" rows="4" required placeholder="Your Message.."></textarea>
+                </div>
+                <button class ="styled-button" value="Submit" name="submit">Submit</button>
+            
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+      
+
+
+
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyk7k0RFfjM1Lnb_rLjuwNBXQjb0pM572C3QC_hcmWF7BAliS8VHVlAB5jlPiIdF5pw6g/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>
